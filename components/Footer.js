@@ -1,5 +1,6 @@
 import React from "react";
 import userData from "@constants/data";
+import Discord from "../components/activity";
 
 export default function Footer() {
   return (
@@ -73,6 +74,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <Discord />
     </div>
   );
 }

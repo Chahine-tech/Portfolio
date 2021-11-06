@@ -5,9 +5,12 @@ import LatestCode from "../components/LatestCode";
 import Hero from "../components/Hero";
 import getLatestRepos from "@lib/getLatestRepos";
 import userData from "@constants/data";
-//import Discord from "../components/activity"
+
+
+
 
 export default function Home({ repositories }) {
+  
   return (
     <ContainerBlock
       title="Chahine Benlahcen - Developer, Creator"
