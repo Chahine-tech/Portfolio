@@ -52,7 +52,7 @@ const userData = {
   socialLinks: {
     instagram: "https://instagram.com/",
     twitter: "https://twitter.com/",
-    linkedin: "https://linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/chahine-benlahcen-tlemcani-999031202/",
     github: "https://github.com/Chahine-tech",
     facebook: "https://facebook.com/",
   },
