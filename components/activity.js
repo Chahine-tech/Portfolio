@@ -14,7 +14,8 @@ export default function activity() {
         if (status) {
             if (status.assets) {
                 const name = status?.activities[0]?.name?.replace("Code", "Visual Studio Code");
-                return setName(name)
+                console.log(name);
+                setName(name)
             } else {
                 setName(false)
             }
