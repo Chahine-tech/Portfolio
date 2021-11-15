@@ -12,8 +12,11 @@ export default function activity() {
     console.log(status?.activities[0])
     useEffect(() => {
         if (status) {
-            const name = status?.activities[0]?.name?.replace("Code", "Visual Studio Code");
-            setName(name)
+            if (status.activities[0]) {
+                const name = status?.activities[0]?.name?.replace("Code", "Visual Studio Code");
+                setName(name)
+            }
+
         }
     }, [status])
 
@@ -31,7 +34,7 @@ export default function activity() {
     return (
 
         <div className="w-80 bg-gray-800 bg-opacity-20 text-white rounded p-4 m-8 dark:text-gray-300">
-            { status !== undefined || status?.activities[0].assets.small_text === "Visual Studio Code" ?
+            {name !== '' && status?.activities[0].assets.small_text === "Visual Studio Code" ?
                 <div className="flex items-center space-x-4">
                     <img src={`https://cdn.discordapp.com/app-assets/${status?.activities[0]?.application_id}/${status?.activities[0].assets.large_image}.png`} className="flex-shrink-0 w-16 h-16 rounded-xl" />
                     <div className="flex flex-col space-y-1 text-sm">
