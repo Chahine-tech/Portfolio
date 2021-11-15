@@ -73,8 +73,8 @@ export default function Footer() {
             </a>
           </div>
         </div>
+        <Discord />
       </div>
-      <Discord />
     </div>
   );
 }

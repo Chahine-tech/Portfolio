@@ -10,7 +10,7 @@ export default function activity() {
     console.log(status?.activities[0])
     const name = status?.activities[0]?.name?.replace("Code", "Visual Studio Code");
 
-    const setActivity = () => {
+/* const setActivity = () => {
         if (status) {
             return status;
         }
@@ -18,7 +18,7 @@ export default function activity() {
             return 
         }
     }
-
+*/
     return (
 
         <div className="w-80 bg-gray-800 bg-opacity-20 text-white rounded p-4 m-8 dark:text-gray-300">
