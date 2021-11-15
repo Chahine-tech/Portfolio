@@ -12,6 +12,7 @@ export default function activity() {
     console.log(status?.activities[0])
     useEffect(() => {
         if (status) {
+            console.log(name);
             if (status.assets) {
                 const name = status?.activities[0]?.name?.replace("Code", "Visual Studio Code");
                 console.log(name);
