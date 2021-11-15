@@ -14,10 +14,11 @@ export default function activity() {
         if (status) {
             if (status.activities[0]) {
                 const name = status?.activities[0]?.name?.replace("Code", "Visual Studio Code");
-                setName(name)
+                return setName(name)
             }
-
+        
         }
+        setName('')
     }, [status])
 
 
