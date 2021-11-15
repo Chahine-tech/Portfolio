@@ -22,7 +22,7 @@ export default function activity() {
             }
         } 
 
-    }, [status])
+    },)
 
 
 
