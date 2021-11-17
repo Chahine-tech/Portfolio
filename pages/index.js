@@ -23,11 +23,24 @@ export default function Home({ repositories }) {
 }
 
 export const getServerSideProps = async () => {
-  console.log(process.env.GITHUB_AUTH_TOKEN);
-  let token = process.env.GITHUB_AUTH_TOKEN;
+  
+  const repositories = await 
+  fetch(`https://api.github.com/search/repositories?q=user:${userData.githubUsername}+sort:author-date-asc`, {
+    headers: {
+      Accept: "application/vnd.github.v3+json"
+    },
+  })
+  .then(response => response.json())
+  .then(async(data) => {
 
-  const repositories = await getLatestRepos(userData, token);
-  // console.log("REPOSITORIES", repositories);
+    if(data.message !== undefined) {
+      return { success: false }
+    }
+
+    const latestSixRepos = await data.items.splice(0, 6)
+    return latestSixRepos
+  })
+  .catch(err => console.log(err));
 
   return {
     props: {
