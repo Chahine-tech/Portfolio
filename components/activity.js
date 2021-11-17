@@ -47,7 +47,7 @@ export default function activity() {
                         <h1> {status?.activities[0].state}</h1>
                     </div>
                 </div>
-                : <h1> test</h1>}
+                : <h1 className="text-sm">I'm not currently doing anything</h1>}
         </div>
 
     )
