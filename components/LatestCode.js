@@ -56,6 +56,12 @@ export default function LatestCode({ repositories }) {
 }
 
 const GithubRepoCard = ({ latestRepo }) => {
+  const colors = {
+    JavaScript: '#f1e05a',
+    TypeScript: '#2b7489',
+    HTML: '#e34c26',
+    Css: '#563d7c'
+  }
   return (
     <div className="github-repo">
       <h1 className="font-semibold text-xl dark:text-gray-200 text-gray-700">
@@ -63,6 +69,10 @@ const GithubRepoCard = ({ latestRepo }) => {
       </h1>
       <p className="text-base font-normal my-4 text-gray-500">
         {latestRepo.description}
+      </p>
+      <p className="text-sm font-normal my-4 text-gray-500 items-center flex">
+      <span style={{ backgroundColor: colors[latestRepo.language], width: '15px', height: '15px', marginRight: '5px', display: 'inline-block', borderRadius: '50%'}} />
+        {latestRepo.language}
       </p>
       <a
         href={latestRepo.clone_url}
