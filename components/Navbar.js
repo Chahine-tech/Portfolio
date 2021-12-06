@@ -3,13 +3,14 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 import userData from "@constants/data";
-
+import useSound from 'use-sound';
+import music from "../public/static/sounds/sound.mp3";
 export default function Navbar() {
   const router = useRouter();
   console.log(router.asPath);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-
+  const [play] = useSound(music);
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -18,10 +19,9 @@ export default function Navbar() {
     <div className="max-w-6xl  mx-auto px-4 py-10 md:py-20">
       <div className="flex  md:flex-row justify-between items-center">
         {/* Logo / Home / Text */}
-
         <div className="flex flex-col">
           <Link href="/">
-            <a>
+            <a onClick={play}>
               <h1 className="font-semibold text-xl dark:text-gray-100">
                 {userData.name}
               </h1>
@@ -34,7 +34,7 @@ export default function Navbar() {
 
         <div className="space-x-8 hidden md:block">
           <Link href="/about">
-            <a
+            <a onClick={play}
               className={`text-base  ${
                 router.asPath === "/about"
                   ? "text-gray-800 font-bold dark:text-gray-400"
@@ -60,7 +60,7 @@ export default function Navbar() {
             </a>
           </Link>
           <Link href="/experience">
-            <a
+            <a onClick={play}
               className={`text-base  ${
                 router.asPath === "/experience"
                   ? "text-gray-800 font-bold dark:text-gray-400"
@@ -86,7 +86,7 @@ export default function Navbar() {
             </a>
           </Link>
           <Link href="/contact">
-            <a
+            <a onClick={play}
               className={`text-base  ${
                 router.asPath === "/contact"
                   ? "text-gray-800 font-bold dark:text-gray-400"
