@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import userData from "@constants/data";
+import emailjs from 'emailjs-com';
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [mail, setMail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const sendEmail = () => {
+    if (mail !== "" && name !== "" && message !== "") {
+      const params = {
+        client: name,
+        email: mail,
+        body: message
+      }
+      emailjs.init('user_9Yd3SCQ2Ye8Yjr0ORA4BY')
+    }
+    else {
+
+    }
+  }
+
   return (
     <section>
       <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-gray-800 antialiased">
