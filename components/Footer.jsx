@@ -1,6 +1,6 @@
 import React from "react";
 import userData from "@constants/data";
-import Discord from "../components/activity";
+import Discord from "./Activity";
 
 export default function Footer() {
   return (

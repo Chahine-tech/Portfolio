@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import getLatestRepos from "@lib/getLatestRepos";
 import userData from "@constants/data";
-import Discord from "../components/activity";
+import Discord from "./Activity";
 
 export default function LatestCode({ repositories }) {
   const [repos, setRepos] = useState([]);
