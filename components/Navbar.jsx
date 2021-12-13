@@ -35,11 +35,10 @@ export default function Navbar() {
         <div className="space-x-8 hidden md:block">
           <Link href="/about">
             <a onClick={play}
-              className={`text-base  ${
-                router.asPath === "/about"
+              className={`text-base  ${router.asPath === "/about"
                   ? "text-gray-800 font-bold dark:text-gray-400"
                   : "text-gray-600 dark:text-gray-300 font-normal "
-              }`}
+                }`}
             >
               About{" "}
               {router.asPath === "/about" && (
@@ -61,11 +60,10 @@ export default function Navbar() {
           </Link>
           <Link href="/experience">
             <a onClick={play}
-              className={`text-base  ${
-                router.asPath === "/experience"
+              className={`text-base  ${router.asPath === "/experience"
                   ? "text-gray-800 font-bold dark:text-gray-400"
                   : "text-gray-600 dark:text-gray-300 font-normal "
-              }`}
+                }`}
             >
               Experience{" "}
               {router.asPath === "/experience" && (
@@ -87,11 +85,10 @@ export default function Navbar() {
           </Link>
           <Link href="/contact">
             <a onClick={play}
-              className={`text-base  ${
-                router.asPath === "/contact"
+              className={`text-base  ${router.asPath === "/contact"
                   ? "text-gray-800 font-bold dark:text-gray-400"
                   : "text-gray-600 dark:text-gray-300 font-normal "
-              }`}
+                }`}
             >
               Contact
               {router.asPath === "/contact" && (
