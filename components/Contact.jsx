@@ -1,26 +1,38 @@
 import React, { useState, useRef, useEffect } from "react";
 import userData from "@constants/data";
-import emailjs from 'emailjs-com';
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
   const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false)
 
-  const sendEmail = () => {
-    if (mail !== "" && name !== "" && message !== "") {
-      const params = {
-        client: name,
-        email: mail,
-        body: message
-      }
-      emailjs.init('user_9Yd3SCQ2Ye8Yjr0ORA4BY')
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('Sending')
+  let data = {
+    name,
+    mail,
+    message
+}
+  fetch('/api/contact', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  }).then((res) => {
+    console.log('Response received')
+    if (res.status === 200) {
+      console.log('Response succeeded!')
+      setSubmitted(true)
+      setName('')
+      setMail('')
+      setMessage('')
     }
-    else {
-
-    }
+  })
   }
-
   return (
     <section>
       <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-gray-800 antialiased">
@@ -169,6 +181,7 @@ export default function Contact() {
               type="text"
               className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
               name="name"
+              onChange={(e)=>{setName(e.target.value)}}
             />
             <label htmlFor="email" className="text-sm text-gray-600 mx-4 mt-4">
               Email
@@ -177,6 +190,7 @@ export default function Contact() {
               type="text"
               className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
               name="email"
+              onChange={(e)=>{setMail(e.target.value)}}
             />
             <label
               htmlFor="message"
@@ -189,10 +203,12 @@ export default function Contact() {
               type="text"
               className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
               name="message"
+              onChange={(e)=>{setMessage(e.target.value)}}
             ></textarea>
             <button
               type="submit"
               className="bg-blue-500 rounded-md w-1/2 mx-4 mt-8 py-2 text-gray-50 text-xs font-bold"
+              onClick={(e)=>{handleSubmit(e)}}
             >
               Send Message
             </button>
