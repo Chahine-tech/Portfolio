@@ -3,12 +3,12 @@ export default function (req, res) {
 
     let nodemailer = require('nodemailer')
     const transporter = nodemailer.createTransport({
-        port: 1025,
-        host: "localhost",
+        port: process.env.SMTP_PORT,
+        host: process.env.SMTP_HOST,
         ignoreTLS: true,
         auth: {
-            user: 'user123',
-            password: 'password123',
+            user: process.env.SMTP_USER,
+            password: process.env.SMTP_PASSWORD,
         },
     });
 

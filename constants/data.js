@@ -19,7 +19,7 @@ const userData = {
   },
   experience: [
     {
-      title: "2 months internship to validate 1st year",
+      title: "3 months internship to validate 1st year",
       company: "Little start-up",
       year: "2021",
       companyLink: "#",
