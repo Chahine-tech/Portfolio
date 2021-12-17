@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Discord from "../constants/discordpresence"
 import { useLanyard } from "react-use-lanyard";
 

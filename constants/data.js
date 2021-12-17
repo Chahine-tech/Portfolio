@@ -50,7 +50,6 @@ const userData = {
   resumeUrl:
     "https://drive.google.com/file/d/1n0Y6zGqHgYJ6vUN4MQv6t_fdIdUCEqCk/view?usp=sharing",
   socialLinks: {
-    instagram: "https://instagram.com/",
     twitter: "https://twitter.com/CBenlahcen",
     linkedin: "https://www.linkedin.com/in/chahine-benlahcen-tlemcani-999031202/",
     github: "https://github.com/Chahine-tech",
