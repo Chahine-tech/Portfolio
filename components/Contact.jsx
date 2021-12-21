@@ -1,37 +1,32 @@
 import React, { useState, useRef, useEffect } from "react";
 import userData from "@constants/data";
-
+import emailjs from 'emailjs-com';
 export default function Contact() {
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault()
-    console.log('Sending')
-    let data = {
-      name,
-      mail,
-      message
-    }
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    }).then((res) => {
-      console.log('Response received')
-      if (res.status === 200) {
-        console.log('Response succeeded!')
-        setSubmitted(true)
-        setName('')
-        setMail('')
-        setMessage('')
+
+    if (mail !== "" && name !== "" && message !== "") {
+
+      const params = {
+        name: name,
+        email: mail,
+        message: message
       }
-    })
+
+      emailjs.init('user_9Yd3SCQ2Ye8Yjr0ORA4BY');
+
+      emailjs.send('service_515yofd', 'template_k5oy958', params)
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
   }
   return (
     <section>
@@ -208,7 +203,7 @@ export default function Contact() {
             <button
               type="submit"
               className="bg-blue-500 rounded-md w-1/2 mx-4 mt-8 py-2 text-gray-50 text-xs font-bold"
-              onClick={(e) => { handleSubmit(e) }}
+              onClick={(e) => { sendEmail(e) }}
             >
               Send Message!
             </button>

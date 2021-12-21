@@ -193,23 +193,6 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-      <div className="space-x-8 block md:hidden mt-4">
-        <Link href="/about">
-          <a className="text-base font-normal text-gray-600 dark:text-gray-300">
-            About
-          </a>
-        </Link>
-        <Link href="/experience">
-          <a className="text-base font-normal text-gray-600 dark:text-gray-300">
-            Experience
-          </a>
-        </Link>
-        <Link href="/contact">
-          <a className="text-base font-normal text-gray-600 dark:text-gray-300">
-            Contact
-          </a>
-        </Link>
-      </div>
     </div>
   );
 }
