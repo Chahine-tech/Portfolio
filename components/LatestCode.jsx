@@ -22,7 +22,7 @@ export default function LatestCode({ repositories }) {
 
           <a
             href={`https://github.com/${userData.githubUsername}`}
-            className="mb-20 md:mb-0 px-8 py-4 rounded-md bg-white shadow-lg text-xl font-semibold flex flex-row space-x-4 items-center dark:text-gray-700"
+            className="mb-20 md:mb-0 px-8 py-4 rounded-md bg-white shadow-lg text-xl font-semibold flex flex-row space-x-4 items-center dark:text-gray-700 transition delay-150 hover:-translate-y-1 hover:scale-110"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@ const GithubRepoCard = ({ latestRepo }) => {
         {latestRepo.description}
       </p>
       <p className="text-sm font-normal my-4 text-gray-500 items-center flex">
-      <span style={{ backgroundColor: colors[latestRepo.language], width: '15px', height: '15px', marginRight: '5px', display: 'inline-block', borderRadius: '50%'}} />
+        <span style={{ backgroundColor: colors[latestRepo.language], width: '15px', height: '15px', marginRight: '5px', display: 'inline-block', borderRadius: '50%' }} />
         {latestRepo.language}
       </p>
       <a
