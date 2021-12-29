@@ -5,9 +5,6 @@ import LatestCode from "../components/LatestCode";
 import Hero from "../components/Hero";
 import userData from "@constants/data";
 
-
-
-
 export default function Home({ repositories }) {
   
   return (

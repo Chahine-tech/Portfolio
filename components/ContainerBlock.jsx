@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { motion } from "framer-motion"
 
 export default function ContainerBlock({ children, ...customMeta }) {
   const router = useRouter();
@@ -14,6 +15,11 @@ export default function ContainerBlock({ children, ...customMeta }) {
     type: "website",
     ...customMeta,
   };
+  const variants = {
+    hidden: { opacity: 0, x: -200, y: 0 },
+    enter: { opacity: 1, x: 0, y: 0 },
+    exit: { opacity: 0, x: 0, y: -100 },
+  }
   return (
     <div>
       <Head>
@@ -34,11 +40,16 @@ export default function ContainerBlock({ children, ...customMeta }) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <main className="dark:bg-gray-800 w-full">
+      <motion.main variants={variants}
+        initial="hidden"
+        animate="enter"
+        exit="exit"
+        transition={{ type: 'linear' }}
+        className="dark:bg-gray-800 w-full">
         <Navbar />
         <div>{children}</div>
         <Footer />
-      </main>
+      </motion.main>
     </div>
   );
 }
