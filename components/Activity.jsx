@@ -37,7 +37,7 @@ export default function activity() {
     */
     return (
 
-        <div className="w-80 bg-gray-800 bg-opacity-20 text-white rounded p-4 m-8 dark:text-gray-300">
+        <div className="w-80 bg-gray-200 text-gray-900 bg-opacity-20 p-4 rounded-md m-8 dark:text-gray-300 dark:bg-gray-800 dark:bg-opacity-20">
             {name !== '' && status?.activities[0].assets.small_text === "Visual Studio Code" ?
                 <div className="flex items-center space-x-4">
                     <img src={`https://cdn.discordapp.com/app-assets/${status?.activities[0]?.application_id}/${status?.activities[0].assets.large_image}.png`} className="flex-shrink-0 w-16 h-16 rounded-xl" alt="Visual Studio Code" />
