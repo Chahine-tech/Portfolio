@@ -45,7 +45,8 @@ export default function ContainerBlock({ children, ...customMeta }) {
         animate="enter"
         exit="exit"
         transition={{ type: 'linear' }}
-        className="dark:bg-gray-800 w-full">
+        className="dark:bg-gray-800 w-full"
+        >
         <Navbar />
         <div>{children}</div>
         <Footer />
