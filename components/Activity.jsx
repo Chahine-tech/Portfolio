@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import Discord from "../constants/discordpresence"
 import { useLanyard } from "react-use-lanyard";
 
 export default function activity() {
     const { loading, status /*, websocket */ } = useLanyard({
-        userId: "366670764939804672",
+        userId: "837752010870095943",
         socket: true,
     });
     const [name, setName] = useState('')
