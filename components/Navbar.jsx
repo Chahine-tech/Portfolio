@@ -7,7 +7,7 @@ import useSound from 'use-sound';
 import music from "../public/static/sounds/sound.mp3";
 export default function Navbar() {
   const router = useRouter();
-  console.log(router.asPath);
+  //console.log(router.asPath);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [play] = useSound(music);

@@ -5,6 +5,6 @@ export default function Discord() {
 		userId: "366670764939804672",
 		socket: true,
 	});
-	console.log(status)
+	//console.log(status)
 	return <pre>{!loading && JSON.stringify(status, null, 4)}</pre>;	
 }
