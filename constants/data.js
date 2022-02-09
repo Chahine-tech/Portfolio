@@ -8,7 +8,7 @@ const userData = {
   address: "Massy, France",
   about: {
     title:
-      "I am a junior developer who dreams of becoming a full stack developer",
+      "I am a junior developer who dream of becoming a full stack developer",
     description: [
       `As I said before, I'm a student at Efrei Paris in bachelor developer programmer. I've been coding for 2 years now. I practice daily to become a full stack developer one day even if it means everything and nothing. `,
       `After learning HTML and struggling with CSS, I started to learn javascript to then use different frameworks for the front-end like React and Vue and for the back-end express. And of course using nodejs.`,
