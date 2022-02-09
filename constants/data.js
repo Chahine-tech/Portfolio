@@ -48,7 +48,7 @@ const userData = {
     },
   ],
   resumeUrl:
-    "https://drive.google.com/file/d/1n0Y6zGqHgYJ6vUN4MQv6t_fdIdUCEqCk/view?usp=sharing",
+    "https://drive.google.com/file/d/1PXh79AyvKVR9krRVso7hoQX-kyJdK1ix/view?usp=sharing",
   socialLinks: {
     twitter: "https://twitter.com/CBenlahcen",
     linkedin: "https://www.linkedin.com/in/chahine-benlahcen-tlemcani-999031202/",
