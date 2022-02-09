@@ -4,7 +4,7 @@ const userData = {
   designation: "Full-Stack Junior Developer",
   avatarUrl: "/avatar.svg",
   email: "chahine.benlahcen@gmail.com",
-  phone: "+91 9587738861",
+  phone: "+33 783633586",
   address: "Massy, France",
   about: {
     title:
