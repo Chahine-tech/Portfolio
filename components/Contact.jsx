@@ -7,6 +7,7 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
 
   const sendEmail = (e) => {
     e.preventDefault()
@@ -25,7 +26,7 @@ export default function Contact() {
 
       emailjs.send('service_515yofd', 'template_k5oy958', params)
         .then((result) => {
-          setError(result.text);
+          setSuccess(result.text);
         }, (error) => {
           setError(error.text);
         });
@@ -56,6 +57,34 @@ export default function Contact() {
             <div className="flex items-center px-2 py-3">
               <div className="mx-3">
                 <p>{error}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      {success && (
+        <div className="animate-BounceIn">
+          <div className="flex items-center text-white max-w-sm w-full bg-green-400 shadow-md rounded-lg overflow-hidden mx-auto">
+            <div className="w-10 border-r px-2">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
+                ></path>
+              </svg>
+            </div>
+
+            <div className="flex items-center px-2 py-3">
+              <div className="mx-3">
+                <p>{success}</p>
               </div>
             </div>
           </div>
